@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>ClickerX</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <button onClick="addToBalance()">Click</button>
+    <h3>Xs: <span id="balanceDisplay">0.00</span></h3>
+    <div id="upgrades">
+        <div class="clickerUpgrades">
+            <h4>Clicker Upgrades:</h4>
+            <div class="upgrade1">
+                <p id="clickUpgradeCost1">Cost 50</p>
+                <button onCLick="upgradeClick(0, 1)">Upgrade +1 click</button>
+            </div>
+            <div class="upgrade2">
+                <p id="clickUpgradeCost2">Cost 1000</p>
+                <button onCLick="upgradeClick(1, 5)">Upgrade +5 click</button>
+            </div>
+            
+        </div>
+        <div class="autoUpgrades">
+            <h4>Auto Upgrades:</h4>
+            <div class="upgrade1">
+                <p id="autoUpgradeCost1">Cost 1500</p>
+                <button onCLick="upgradeAuto(0, 1)">Upgrade +1 auto</button>
+            </div>
+            <div class="upgrade2">
+                <p id="autoUpgradeCost2">Cost 5000</p>
+                <button onCLick="upgradeAuto(1, 5)">Upgrade +1 auto</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
