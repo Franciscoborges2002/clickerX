@@ -3,9 +3,22 @@
     padding: 0px;
 }
 
+html{
+    height: 100%;
+}
+
 #upgrades{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 100px;
+}
+
+.footerWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete{
+    color:red;
 }

@@ -9,7 +9,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
-<body>
+<body onload="loadGame()">
     <h1>No save!</h1>
     <button onClick="addToBalance()">Click</button>
     <h3>Xs: <span id="balanceDisplay">0.00</span></h3>
@@ -38,5 +38,18 @@
             </div>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="footerWrapper">
+            <div class="save">
+                <span onClick="saveGame()">Save</span>
+                <span onClick="downloadSave()">Download Save</span>
+                <span onClick="deleteGame()" class="delete">Delete Game</span>
+            </div>
+            <div class="social">
+                <a href="https://github.com/Franciscoborges2002/clickerX" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
