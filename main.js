@@ -41,10 +41,11 @@ function upgradeAuto(index, value2Upgrade){
 }
 
 /*ADD TO AUTO BALANCE*/
-setInterval(() =>{//use anonymous function
-    balance = balance + autoPower;
-    console.log("autoPower " + autoPower)
-    console.log("balance " + balance)
+setInterval(() =>{//use anonymous function, when loading , adds alweys a number in fornt -> major error
+    balance = parseFloat(balance) + parseFloat(autoPower);
+    //console.log("autoPower " + autoPower + typeof(autoPower));
+    //console.log("balance " + balance + typeof(balance))
+    
 }, 1000);
 
 /*UPDATE PART*/
@@ -95,7 +96,7 @@ function loadGame(){
         autoPower = localStorage.getItem('autoPower');
     }
     
-    console.log("autoPower " + autoPower)
+    //console.log("autoPower " + autoPower)
 }
 
 function saveGame(){
