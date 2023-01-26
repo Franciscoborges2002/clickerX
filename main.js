@@ -7,7 +7,7 @@ var clickPower;
 var autoPower;
 
 function addToBalance(){
-    balance += clickPower;
+    balance = Number(balance) + Number(clickPower);
 }
 
 /* UPGRADE PART */
@@ -18,7 +18,7 @@ function upgradeClick(index, value2Upgrade){
     if(balance < clickPowerPrices[index][value2Upgrade]){//Verify if has balance
         alert("Not enough balance");
     }else{
-        clickPower += value2Upgrade;//Add to the clickPower
+        clickPower = Number(clickPower) + Number(value2Upgrade);//Add to the clickPower
         balance -= clickPowerPrices[index][value2Upgrade];//Remove value from balance
         clickPowerPrices[index][value2Upgrade] = clickPowerPrices[index][value2Upgrade] * 1.3;//Update value
     }
@@ -32,7 +32,7 @@ function upgradeAuto(index, value2Upgrade){
     if(balance < autoPrices[index][value2Upgrade]){//Verify if has balance
         alert("Not enough balance");
     }else{
-        autoPower += value2Upgrade;//Add to the clickPower
+        autoPower = Number(autoPower) + Number(value2Upgrade);//Add to the clickPower
         balance -= autoPrices[index][value2Upgrade];//Remove value from balance
         autoPrices[index][value2Upgrade] = autoPrices[index][value2Upgrade] * 1.3;//Update value
     }
@@ -66,6 +66,8 @@ function updateDiplayClickerCostsClick(updateNumber, value2Upgrade){
         default:
             break;
     }
+
+    document.getElementById("clickPower").innerHTML = "clickPower: " + clickPower;
 }
 
 function updateDiplayAutoCostsClick(updateNumber, value2Upgrade){
@@ -79,11 +81,12 @@ function updateDiplayAutoCostsClick(updateNumber, value2Upgrade){
         default:
             break;
     }
+    document.getElementById("autoPower").innerHTML = "autoPower: " + autoPower;
 }
 
 /* SAVE & LOAD GAME PART */
 
-function loadGame(){
+function loadGame(){//This function will execute every time the page is loaded
     console.log('LOADING GAME FROM LOCAL STORAGE');
 
     if(localStorage.getItem('clickPower') === null){//If has clickPower is different than null, it has some value
@@ -99,7 +102,7 @@ function loadGame(){
     //console.log("autoPower " + autoPower)
 }
 
-function saveGame(){
+function saveGame(){//This function will execute nonce clicked in the button
     console.log("SAVING GAME TO LOCAL STORAGE");
     if(clickPower === "null"){
         alert("Please make some progress in the game before saving the game.");
@@ -114,5 +117,9 @@ function deleteGame(){
     if (confirm("Do you really want to delete the game?") == true) {
         localStorage.clear();
         window.location.reload();
-      }
+    }
+}
+
+function uploadGame(){
+
 }

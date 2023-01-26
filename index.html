@@ -12,6 +12,11 @@
 <body onload="loadGame()">
     <button onClick="addToBalance()">Click</button>
     <h3>Xs: <span id="balanceDisplay">0.00</span></h3>
+    <div class="statsPreview">
+        <p id="clickPower">clickPower: 1</p>
+        <p id="autoPower">autoPower: 0</p>
+        <p id="perSecond">0 x/s</p>
+    </div>
     <div id="upgrades">
         <div class="clickerUpgrades">
             <h4>Clicker Upgrades:</h4>
@@ -41,8 +46,10 @@
     <footer class="footer">
         <div class="footerWrapper">
             <div class="save">
+                <span>Estatisticas</span>
                 <span onClick="saveGame()">Save</span>
                 <span onClick="downloadSave()">Download Save</span>
+                <span onClick="uploadGame()">Upload Game</span>
                 <span onClick="deleteGame()" class="delete">Delete Game</span>
             </div>
             <div class="social">
